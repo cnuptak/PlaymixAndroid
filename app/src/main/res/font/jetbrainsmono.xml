@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <font
+            android:fontStyle="normal"
+            android:fontWeight="400"
+            android:font="@font/jetbrainsmonoregular"
+    />
+    <font
+            app:fontStyle="normal"
+            app:fontWeight="400"
+            app:font="@font/jetbrainsmonoregular"
+    />
+
+    <font
+            android:fontStyle="italic"
+            android:fontWeight="400"
+            android:font="@font/jetbrainsmonoitalic"
+    />
+    <font
+            app:fontStyle="italic"
+            app:fontWeight="400"
+            app:font="@font/jetbrainsmonoitalic"
+    />
+
+    <font
+            android:fontStyle="italic"
+            android:fontWeight="400"
+            android:font="@font/jetbrainsmonobolditalic"
+    />
+    <font
+            app:fontStyle="italic"
+            app:fontWeight="400"
+            app:font="@font/jetbrainsmonobolditalic"
+    />
+
+    <font
+            android:fontStyle="normal"
+            android:fontWeight="400"
+            android:font="@font/jetbrainsmonobold"
+    />
+    <font
+            app:fontStyle="normal"
+            app:fontWeight="400"
+            app:font="@font/jetbrainsmonobold"
+    />
+</font-family>

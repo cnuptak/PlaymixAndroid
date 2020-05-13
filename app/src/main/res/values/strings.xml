@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">PlaymixAndroid</string>
+    <string name="player">Player!</string>
+    <string name="tracklist">
+        Bop - UKBMix 057
+        \nMinor Science - Polyglottal
+        \nMurlo - Herne’s Hollow
+        \nMind of a Dragon - Straight
+        \nPrescribe Da Vibe - I’m Here
+        \nRoute 94 - HT Conundrum
+        \nDesert Sound Colony - Mega Globule
+        \nYak - Dire Hit
+        \nProject Paradis, Mr. Carmack Promnite - Give In
+        \n? - ?
+        \nTymotica - Galaxies of Dust
+        \n? - ?
+        \nFormally Unknown - Birds
+        \nSynkro - Images (Sieren Remix)
+        \nMinor Science - Voiced and Unvoiced
+        \nFelix Leifur - Brot 10
+        \n96 Back - Fe Symbolic
+        \nYak - Esper
+        \nFrederic Robinson - Skip
+        \nFixate - Wrong Foot Forward
+        \nItoa - ?
+        \nDissident - His Paintings
+        \nRatgrave - Bleeding To Death
+        \nOak - Escapist*
+        \nMachinedrum - Braided Leaves
+        \nUnglued - Zen (feat. Cimone)
+        \nPhaction - The Fail (feat. Riya)
+        \nBop - Magic.gif
+        \nFrij - Rendezvous
+    </string>
+    <string name="textview">Playlist:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
