@@ -1,3 +1,4 @@
+/*
 fun main(args: Array<String>) {
     val name = "Playlistmix"
     //Application name
@@ -44,3 +45,4 @@ fun acceptableMixUrl(URL: String?) : String {
     }
     return userURL
 }
+*/

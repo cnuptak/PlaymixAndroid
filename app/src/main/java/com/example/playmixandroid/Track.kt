@@ -1,3 +1,4 @@
+/*
 class Track (val artist: String, val title: String, var remix_artist: String,
              val feat: String, val VIP: Boolean, val label: String) {
     init {
@@ -19,4 +20,4 @@ class Track (val artist: String, val title: String, var remix_artist: String,
     fun stop() {
         println("Stopped playing $title")
     }
-}
+}*/
