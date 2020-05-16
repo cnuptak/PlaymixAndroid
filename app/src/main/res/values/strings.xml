@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">PlaymixAndroid</string>
     <string name="player">Player!</string>
+    <string name="tracklistbutton">Tracklist</string>
+    <string name="about">About</string>
+    <string name="aboutcontain">Playmix v 0.1
+    \n © Free Corporation, 2020. All rights reserved.
+</string>
     <string name="tracklist">
         Bop - UKBMix 057
         \nMinor Science - Polyglottal
