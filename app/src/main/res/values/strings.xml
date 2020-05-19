@@ -3,6 +3,7 @@
     <string name="player">Player!</string>
     <string name="tracklistbutton">Tracklist</string>
     <string name="about">About</string>
+    <string name="share_success_text">Success!</string>
     <string name="aboutcontain">Playmix v 0.1
     \n © Free Corporation, 2020. All rights reserved.
 </string>
@@ -41,4 +42,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share">Share</string>
 </resources>
