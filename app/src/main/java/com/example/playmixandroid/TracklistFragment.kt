@@ -3,6 +3,7 @@ package com.example.playmixandroid
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 
 
@@ -19,12 +20,17 @@ class TracklistFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater?.inflate(R.menu.sharetracklistmenu, menu)
+        // check if the activity resolved
+        if (null == getShareIntent().resolveActivity(activity!!.packageManager)) {
+        //hide menu
+        menu?.findItem(R.id.sharemenu)?.setVisible(false)
+        }
     }
 
     private fun getShareIntent() : Intent {
-        val shareIntent = Intent(Intent.ACTION_SEND)
-        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT,getString(R.string.tracklist))
-        return shareIntent
+        return ShareCompat.IntentBuilder.from(activity!!).setText(getString(R.string.tracklist))
+            .setType("text/plain")
+            .intent
     }
 
     private fun shareSuccess() {
