@@ -10,7 +10,11 @@
             android:label="TitleFragment">
         <action
                 android:id="@+id/action_titleFragment_to_tracklistFragment32"
-                app:destination="@id/tracklistFragment3"/>
+                app:destination="@id/tracklistFragment3"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/slide_out_left"
+                app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
             android:id="@+id/tracklistFragment3"
