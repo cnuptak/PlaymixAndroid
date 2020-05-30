@@ -14,6 +14,7 @@ import com.example.playmixandroid.databinding.ActivityMainBinding
 import timber.log.Timber
 import android.widget.Button
 import android.widget.Toast
+import android.widget.SeekBar
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,16 +40,30 @@ class MainActivity : AppCompatActivity() {
         }
 
         mediaPlayer = MediaPlayer.create(this, R.raw.april)
-
-
         mediaPlayer?.setOnPreparedListener {
             println("Ready to go")
             val playButton: Button = findViewById(R.id.play_button)
             playButton.setOnClickListener {
-                mediaPlayer?.start()
-                Toast.makeText(this, "Playing the file", Toast.LENGTH_SHORT).show()
+                if (mediaPlayer?.isPlaying()!!) {
+                    mediaPlayer?.pause();
+                    playButton.setBackgroundResource(R.drawable.ic_play_circle_outline_black_24dp)
+                    Toast.makeText(this, "Pause", Toast.LENGTH_SHORT).show()
+                } else {
+                    mediaPlayer?.start()
+                    playButton.setBackgroundResource(R.drawable.ic_pause_circle_outline_black_24dp)
+                    Toast.makeText(this, "Playing the file", Toast.LENGTH_SHORT).show()
+                }
+
             }
         }
+//        mediaPlayer?.setOnPreparedListener {
+//            println("Ready to go")
+//            val playButton: Button = findViewById(R.id.play_button)
+//            playButton.setOnClickListener {
+//                mediaPlayer?.start()
+//                Toast.makeText(this, "Playing the file", Toast.LENGTH_SHORT).show()
+//            }
+//        }
         trackTimer = TrackTimer(this.lifecycle)
     }
 
