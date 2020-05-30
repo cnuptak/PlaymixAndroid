@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.playmixandroid.databinding.FragmentTitleBinding
+import android.app.Activity
 
 class TitleFragment : Fragment() {
 
@@ -22,7 +23,6 @@ class TitleFragment : Fragment() {
         )
         setHasOptionsMenu(true)
         return binding.root
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -34,5 +34,4 @@ class TitleFragment : Fragment() {
         return NavigationUI.onNavDestinationSelected(item!!,view!!.findNavController())
                 ||super.onOptionsItemSelected(item)
     }
-
 }
