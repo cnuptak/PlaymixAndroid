@@ -3,6 +3,7 @@ package com.example.playmixandroid
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
+import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.Toast
@@ -16,6 +17,9 @@ import androidx.navigation.ui.NavigationUI
 import com.example.playmixandroid.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.fragment_title.*
 import timber.log.Timber
+
+const val KEY_DURATION = "key_duration"
+const val KEY_TIMEPOSITION = "key_timeposition"
 
 class MainActivity : AppCompatActivity() {
     private var mediaPlayer : MediaPlayer? = null
@@ -81,17 +85,26 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
+        if (savedInstanceState != null){
+            savedInstanceState.getInt(KEY_DURATION)
+            savedInstanceState.getInt(KEY_TIMEPOSITION)
+        }
+    }
 
+    fun millisecondsToTime(milliseconds: Int): String {
+        val minutes = ((milliseconds/1000)%3600)/60
+        val seconds = (milliseconds/1000) % 60
+        return String.format("%02d:%02d",minutes,seconds)
     }
 
     private fun initializeSeekBar() {
         seek_bar.max = mediaPlayer?.seconds!!
         runnable = Runnable{
             seek_bar.progress = mediaPlayer?.currentSeconds!!
-            current_time.text = "${mediaPlayer?.currentSeconds} sec"
+            current_time.text = millisecondsToTime(mediaPlayer?.currentSeconds!!)
 
             val timepos = mediaPlayer?.seconds!!
-            duration.text = "$timepos sec"
+            duration.text = millisecondsToTime(timepos)
             handler.postDelayed(runnable, 1000)
         }
         handler.postDelayed(runnable, 1000)
@@ -99,12 +112,12 @@ class MainActivity : AppCompatActivity() {
 
     val MediaPlayer.seconds:Int
         get() {
-            return this.duration / 1000
+            return this.duration
         }
 
     val MediaPlayer.currentSeconds:Int
         get() {
-            return this.currentPosition/1000
+            return this.currentPosition
         }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -112,14 +125,20 @@ class MainActivity : AppCompatActivity() {
         return NavigationUI.navigateUp(navController, drawerLayout)
     }
 
-    //override fun onBackPressed() {
-        //super.onBackPressed()
-        //finish()
-    //}
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(KEY_DURATION, mediaPlayer?.currentSeconds!!)
+        outState.putInt(KEY_TIMEPOSITION, mediaPlayer?.seconds!!)
+        Timber.i("onSaveInstanceState called")
+    }
 
     override fun onStart() {
         super.onStart()
         Timber.i("onStart called")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
     }
 
     override fun onPause() {
