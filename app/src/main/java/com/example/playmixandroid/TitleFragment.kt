@@ -13,14 +13,30 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.playmixandroid.databinding.FragmentTitleBinding
 import android.app.Activity
+import android.util.Log
+import android.widget.SeekBar
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.fragment_title.*
 
 class TitleFragment : Fragment() {
 
+    private lateinit var viewModel: PlaymixViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding: FragmentTitleBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
+        val binding: FragmentTitleBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_title,
+            container,
+            false
+        )
+
+        Log.i("TitleFragment","Called ViewModel.of!")
+        viewModel = ViewModelProvider(this).get(PlaymixViewModel::class.java)
+
         binding.TracklistButton.setOnClickListener (
             Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_tracklistFragment32)
         )
+
         setHasOptionsMenu(true)
         return binding.root
     }

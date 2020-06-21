@@ -7,7 +7,7 @@
     <fragment
             android:id="@+id/titleFragment"
             android:name="com.example.playmixandroid.TitleFragment"
-            android:label="TitleFragment">
+            android:label="Playmix">
         <action
                 android:id="@+id/action_titleFragment_to_tracklistFragment32"
                 app:destination="@id/tracklistFragment3"
@@ -19,7 +19,7 @@
     <fragment
             android:id="@+id/tracklistFragment3"
             android:name="com.example.playmixandroid.TracklistFragment"
-            android:label="fragment_tracklist"
+            android:label="Tracklist"
             tools:layout="@layout/fragment_tracklist"/>
     <fragment
             android:id="@+id/aboutFragment"
